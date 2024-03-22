@@ -14,7 +14,7 @@ gunzip kubectl*
 chmod ugo+x kubectl*
 sudo install kubectl* /usr/local/bin/
 sudo mv kubectl* /usr/local/bin/kubectl
-kubectl_version=`kubectl version --short`
+kubectl_version=`kubectl version`
 echo -e "Kubectl version are:\n$kubectl_version"
 rm -rf /tanzu/kubectl
 sleep 5
