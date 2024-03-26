@@ -1,5 +1,6 @@
 #!/bin/bash
 
+source /tmp/.vcc_credentials
 plugin_group_version=`vcc get versions -p vmware_tanzu_kubernetes_grid -s tkg`
 echo -e "Available groups for plugin are\n$plugin_group_version"
 read -p "Enter plugin group name for tkg: " plugin_version

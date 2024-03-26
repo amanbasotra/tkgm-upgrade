@@ -21,3 +21,4 @@ else
   exit 1
 fi
 
+rm -rf /tmp/.vcc_credentials

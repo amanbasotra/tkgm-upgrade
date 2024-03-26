@@ -4,6 +4,7 @@ rm -rf ~/.config/tanzu/tkg/compatibility/tkg-compatibility.yaml
 cd /tanzu
 mkdir cli
 cd /tanzu/cli
+source /tmp/.vcc_credentials
 cli_versions=`vcc get versions -p vmware_tanzu_cli -s tcli`
 echo -e "Available Tanzu Cli Version\n$cli_versions"
 read -p "Enter Tanzu Cli version for upgrade: " tanzu_cli_version

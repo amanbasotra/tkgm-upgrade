@@ -3,6 +3,7 @@
 rm -rf /usr/local/bin/kubectl
 mkdir -p /tanzu/kubectl
 cd /tanzu/kubectl
+source /tmp/.vcc_credentials
 plugin_group_version=`vcc get versions -p vmware_tanzu_kubernetes_grid -s tkg`
 echo -e "Available groups for kubectl plugin are\n$plugin_group_version"
 read -p "Enter kubectl plugin group name for tkg: " plugin_version
@@ -14,7 +15,7 @@ gunzip kubectl*
 chmod ugo+x kubectl*
 sudo install kubectl* /usr/local/bin/
 sudo mv kubectl* /usr/local/bin/kubectl
-kubectl_version=`kubectl version --short`
+kubectl_version=`kubectl version`
 echo -e "Kubectl version are:\n$kubectl_version"
 rm -rf /tanzu/kubectl
 sleep 5

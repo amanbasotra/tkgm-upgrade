@@ -11,5 +11,8 @@ rm -rf /tanzu/vcc
 read -p "Enter Customerconnect Username: " VCC_USER
 read -s -p "Enter CustomerConnect Password: " VCC_PASS
 
-export VCC_USER='$VCC_USER'
-export VCC_PASS='$VCC_PASS'
+cd /tmp
+touch .vcc_credentials
+echo "export VCC_USER='$VCC_USER'">/tmp/.vcc_credentials
+echo "export VCC_PASS='$VCC_PASS'">>/tmp/.vcc_credentials
+source /tmp/.vcc_credentials
